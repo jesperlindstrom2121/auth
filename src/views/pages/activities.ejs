@@ -1,0 +1,85 @@
+<!-- views/success.ejs -->
+<!doctype html>
+<html>
+  <head>
+    <title>Gitlab OAuth</title>
+    
+      <style>
+        body{ 
+          padding-top:70px; 
+          margin:auto;
+        }
+        h1{
+          text-align:center;
+          margin:auto;
+          margin-top:20px;
+        }
+        h2{
+          text-align:center;
+          margin:auto;
+          margin-top:20px;
+          font-size:18px;
+        }
+        .container{
+          width:700px;
+          height:auto;
+          background-color:none;
+          border: 1px solid #8510d8;
+          margin:auto;
+          padding-bottom:50px;
+        }
+        .row{
+          width:80%;
+          margin:auto;
+        }
+        a{
+          line-height: 1.5;
+        }
+        .a{
+          height:100px;    
+        }
+        .a strong{
+          float:left;
+        }
+        img{
+          padding-left:50px;
+          
+        }
+        button{
+          margin-left:70px;
+          background-color: #8510d8;
+          border:none;
+          padding:10px;
+          color:white;
+        }
+        h4{
+          font-size: 16px;
+          color:grey;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+          <h1><span></span> Gitlab Information</h1>
+          <div class="row">
+            <div>
+              <div>
+                <p>
+                  <% for(var i = 1; i < userData.length; i++) { %>
+                    <h3><%= userData[i].author.name %> @<%= userData[i].author.username %> </h3>
+                    <h4><%= userData[i].action_name %>, time: <%= userData[i].created_at %></h4>
+                  <% } %>
+                  
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+      <form method="GET" action="/successed">
+        <button>101 senaste aktiviteter</button>
+      </form>
+    </div>
+    
+  </body>
+</html>

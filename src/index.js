@@ -1,5 +1,5 @@
 import express from 'express'
-import { router } from './router/router.js'
+import { router } from './routers/router.js'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 import ejs from 'ejs'

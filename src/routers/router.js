@@ -6,11 +6,11 @@ export const router = express.Router()
 
 const controller = new Controller()
 
-router.get('/login')
-router.post('/login')
-router.get('/auth/gitlab/callback')
-router.get('/success')
-router.get('/successed')
+router.get('/login', controller.showLogin)
+router.post('/login', controller.login)
+router.get('/auth/gitlab/callback', controller.callbackGitlab)
+router.get('/success', controller.success)
+router.get('/successed', controller.activities)
 
 router.use('*', (req, res, next) => {
   const error = new Error()
