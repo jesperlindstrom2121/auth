@@ -34,7 +34,7 @@ export class Controller {
     //console.log(code, 'vv')
    axios({
       method: 'post',
-      url: `https://gitlab.lnu.se/oauth/token?client_id=0572e646e500d97a03871b3aaa14203f5973146a381b5a324707561b36d1f8af&client_secret=7312a5504298a100a79b94a66ca72fc6e320d7973bc2aaa9432edef23579fe47&code=${code}&grant_type=authorization_code&redirect_uri=http://localhost:3000/auth/gitlab/callback`,
+      url: `https://gitlab.lnu.se/oauth/token?client_id=0572e646e500d97a03871b3aaa14203f5973146a381b5a324707561b36d1f8af&client_secret=7312a5504298a100a79b94a66ca72fc6e320d7973bc2aaa9432edef23579fe47&code=${code}&grant_type=authorization_code&redirect_uri=http://www.fishcatch.se:3000/auth/gitlab/callback`,
       // Set the content type header, so that we get the response in JSON
       headers: {
            accept: 'application/json'
@@ -74,7 +74,7 @@ export class Controller {
   }
 
   async login (req, res, next) {
-    res.redirect('https://gitlab.lnu.se/oauth/authorize?client_id=0572e646e500d97a03871b3aaa14203f5973146a381b5a324707561b36d1f8af&response_type=code&state=dfg2332ffrfr&redirect_uri=http://localhost:3000/auth/gitlab/callback&scope=api')
+    res.redirect('https://gitlab.lnu.se/oauth/authorize?client_id=0572e646e500d97a03871b3aaa14203f5973146a381b5a324707561b36d1f8af&response_type=code&state=dfg2332ffrfr&redirect_uri=http://www.fishcatch.se:3000/auth/gitlab/callback&scope=api')
   }
 
   async success (req, res) {
